@@ -6,12 +6,10 @@ namespace MasterClasses
 {
     public static class Shorts
     {
-        //Isso me permitirá passar uma string para o método sem chamar o método Writline
         public static void Write(string str)
         {
             Console.Write(str);
         }
-        //Isso adicionará espaços em branco, reduzindo meu tempo e código
         public static void AddSpace(int num)
         {
             do
@@ -21,7 +19,6 @@ namespace MasterClasses
             } while (num > 0);
 
         }
-        //Isso pega o texto do usuário digitado e o atribui e retorna seu valor para que eu possa chamá-lo mais tarde
         public static string ConsoleInput()
         {
             string conInput = Console.ReadLine();
@@ -30,8 +27,6 @@ namespace MasterClasses
     }
     public static class FullScreen
     {
-        //Fazer tela cheia
-        //isso é para o modo tela cheia
         [DllImport("kernel32.dll", ExactSpelling = true)]
         private static extern IntPtr GetConsoleWindow();
         private static IntPtr ThisConsole = GetConsoleWindow();
@@ -42,7 +37,6 @@ namespace MasterClasses
         private const int MINIMIZE = 6;
         private const int RESTORE = 9;
 
-        //Isso definirá a janela do console para tela cheia
         public static void WideScreenMethod()
         {
             Console.SetWindowSize(Console.LargestWindowWidth, Console.LargestWindowHeight);
@@ -55,8 +49,7 @@ namespace MasterClasses
         public static int dividedWidth = consoleWidth / 2;
         public static string spaces = ' '.Repeat(dividedWidth);
     }
-    //Classe para função Repeat - usada para espaços de texto e divisão da tela
-    //A classe foi criada para utilizar o Repetir com espaços para centralizar o texto
+
     public static class CharExtensions
     {
         public static string Repeat(this char c, int count)
@@ -64,24 +57,7 @@ namespace MasterClasses
             return new String(c, count);
         }
     }
-    public static class ThankYouMessage
-    {
-        public static void ThankYouEnding()
-        {
-            Console.WriteLine((DivideScreen.spaces.Remove(0, 18) + "                Tenha um bom dia!                   "));
 
-            Console.ForegroundColor = ConsoleColor.Yellow;
-
-            Console.WriteLine((DivideScreen.spaces.Remove(0, 18) + " _   _                 _                           "));
-            Console.WriteLine((DivideScreen.spaces.Remove(0, 18) + "| | | |               | |                          "));
-            Console.WriteLine((DivideScreen.spaces.Remove(0, 18) + "| |_| |__   __ _ _ __ | | ___   _  ___  _   _      "));
-            Console.WriteLine((DivideScreen.spaces.Remove(0, 18) + "| __| '_ \\ / _` | '_ \\| |/ / | | |/ _ \\| | | |  "));
-            Console.WriteLine((DivideScreen.spaces.Remove(0, 18) + "| |_| | | | (_| | | | |   <| |_| | (_) | |_| |     "));
-            Console.WriteLine((DivideScreen.spaces.Remove(0, 18) + "\\___|_| |_|\\__,_|_| |_|_|\\_\\__, |\\___/ \\__,__|"));
-            Console.WriteLine((DivideScreen.spaces.Remove(0, 18) + "                            __/  |                 "));
-            Console.WriteLine((DivideScreen.spaces.Remove(0, 18) + "                           |____/                  "));
-        }
-    }
     public static class ASCII_Art
     {
         //Text Color White
@@ -224,7 +200,7 @@ namespace MasterClasses
             BackColorRed();
             Console.Write("   36  ");
             BackColorGreen();
-            Console.Write("| Column 1  |\n");
+            Console.Write("| Coluna 1  |\n");
             //line 3
             Console.Write(" /   00  |");
             BackColorRed();
@@ -374,7 +350,7 @@ namespace MasterClasses
             BackColorBlack();
             Console.Write("   35  ");
             BackColorGreen();
-            Console.Write("| Column 2  |\n");
+            Console.Write("| Coluna 2  |\n");
             //line 6
             Console.Write(" \\       |");
             BackColorBlack();
@@ -524,7 +500,7 @@ namespace MasterClasses
             BackColorRed();
             Console.Write("   34  ");
             BackColorGreen();
-            Console.Write("| Column 3  |\n");
+            Console.Write("| Coluna 3  |\n");
             //line 9
             Console.Write(" \\       |");
             BackColorRed();
@@ -613,7 +589,6 @@ namespace MasterClasses
     public static class TryAgainMessage
     {
         public static string tryAgainResponse = "S";
-        //Try again method to play again or game over
         public static bool TryAgain()
         {
             Console.WriteLine("Jogar de novo? [S] ou [N]");
@@ -631,9 +606,9 @@ namespace MasterClasses
     }
     public static class Account
     {
-        //Set the variable money to an integer
+        //Define a variável dinheiro como um número inteiro
         public static int currentMoney = 500;
-        //This method shows the current account balance from the varaiable money in Account Class
+        //Este método mostra o saldo da conta a partir do dinheiro variável na classe de conta
         public static void Bank()
         {
             Shorts.Write($"Saldo em Conta: ${currentMoney}.00\n");
@@ -642,7 +617,7 @@ namespace MasterClasses
         {
             return currentMoney;
         }
-        //This method will add the current account money and the amount that was bet
+        //Este método irá adicionar o dinheiro da conta corrente e o valor que foi apostado
         public static void Add(int bet)
         {
             currentMoney = currentMoney + bet;
@@ -665,7 +640,7 @@ namespace MasterClasses
     {
         public static bool DetermineIfGameOver()
         {
-            //If money is zero or less retrun true
+            //Se o dinheiro for zero ou menos, retorne verdadeiro
             if (Account.currentMoney <= 0)
             {
                 return false;
@@ -708,11 +683,11 @@ namespace MasterClasses
             {
 
                 amountWaged = Convert.ToInt32(Shorts.ConsoleInput());
-                //If statement for different bet amounts
+
                 if (amountWaged > 0)
                 {
                     Console.Clear();
-                    //if current money amount equals the amount betted - All in! 
+                    //se o valor atual for igual ao valor apostado - All in!
                     if (amountWaged == Account.CheckMoneyStatus())
                     {
                         if (GameOverConditions.DetermineIfGameOver() == true)
@@ -721,8 +696,7 @@ namespace MasterClasses
                             Shorts.Write("CERTO, VOCÊ ESTÁ DENTRO\n");
                             Shorts.Write("Boa Sorte!!!\n");
                             Shorts.AddSpace(1);
-                            //Use the subtract method called from the Account class and pass the variable amountBetted using the ref keywaord, which is needed to pass an argument to a method
-                            //Wage minus Current Money
+
                             Account.Subtract(ref amountWaged);
                             Game.SelectionBetMenu();
                         }
@@ -735,7 +709,7 @@ namespace MasterClasses
                     {
                         //Console.WriteLine(amountWaged);
                         //Console.WriteLine(Account.CheckMoneyStatus());
-                        Console.WriteLine("Sorry, but that wager is higher than what's in your account");
+                        Console.WriteLine("Desculpe, mas essa aposta é maior do que o que está em sua conta");
                         Account.Bank();
                         TryAgainMessage.TryAgain();
                     }
@@ -743,7 +717,7 @@ namespace MasterClasses
                     {
                         Account.Subtract(ref amountWaged);
                         int newBalance = currentBankAmount - amountWaged;
-                        Console.WriteLine($"Alright you made a bet of: ${amountWaged}.00 leaving you a balance of ${newBalance}.00");
+                        Console.WriteLine($"Você fez uma aposta de: ${amountWaged}.00 deixando um saldo de ${newBalance}.00");
                         Shorts.AddSpace(1);
                         Game.SelectionBetMenu();
                     }
@@ -757,18 +731,18 @@ namespace MasterClasses
         }
         public static void SelectionBetMenu()
         {
-            Shorts.Write("PLACE YOUR BET:\n");
-            Shorts.Write("[ 1]  Pick a Number\n" +
+            Shorts.Write("FAÇA SUA APOSTA:\n");
+            Shorts.Write("[ 1]  Escolha um número\n" +
                     "[ 2]  Red\n" +
                     "[ 3]  Black\n" +
                     "[ 4]  Even\n" +
                     "[ 5]  Odd\n" +
-                    "[ 6]  Low (1 thru 18)\n" +
-                    "[ 7]  High (19 thru 36\n" +
+                    "[ 6]  Low (1 até 18)\n" +
+                    "[ 7]  High (19 até 36)\n" +
                     "[ 8]  Dozens\n" +
                     "[ 9]  Columns\n" +
                     "[10]  Street\n" +
-                    "[11]  Six Numbers\n" +
+                    "[11]  6 Números\n" +
                     "[12]  Splits\n" +
                     "[13]  Corners\n" +
                     "[14]  PLAY ALL BETS");
@@ -824,7 +798,7 @@ namespace MasterClasses
                 Console.WriteLine("Quer jogar de novo?");
                 var response = Console.ReadLine();
                 var responseConverted = response.ToUpper();
-                if (responseConverted == "Y")
+                if (responseConverted == "S")
                 {
                     Console.Clear();
                     ASCII_Art.RouletteTableArt();
@@ -838,7 +812,7 @@ namespace MasterClasses
                 }
                 else
                 {
-                    Console.WriteLine("Forma incorreta, digite [Y] ou [N]");
+                    Console.WriteLine("Forma incorreta, digite [S] ou [N]");
                     PlayAgainQuestion();
                 }
             }
@@ -942,7 +916,7 @@ namespace MasterClasses
 
             if (red_nums.Any(i => i == ballNumber))
             {
-                Console.WriteLine($"IT'S RED - VOCÊ GANHOU! ${amountWaged * 2}.00!");
+                Console.WriteLine($"É RED - VOCÊ GANHOU! ${amountWaged * 2}.00!");
                 currentBankAmount = (amountWaged * 2) + currentBankAmount;
                 Console.WriteLine($"Você tem ${currentBankAmount}.00");
                 Game.AddMoney(ref currentBankAmount);
@@ -976,7 +950,7 @@ namespace MasterClasses
 
             if (black_nums.Any(i => i == ballNumber))
             {
-                Console.WriteLine($"IT'S BLACK - VOCÊ GANHOU! ${amountWaged * 2}.00!");
+                Console.WriteLine($"É BLACK - VOCÊ GANHOU! ${amountWaged * 2}.00!");
                 currentBankAmount = (amountWaged * 2) + currentBankAmount;
                 Console.WriteLine($"Você tem ${currentBankAmount}.00");
                 Game.AddMoney(ref currentBankAmount);
@@ -1007,7 +981,7 @@ namespace MasterClasses
 
             if (even_nums.Any(i => i == ballNumber))
             {
-                Console.WriteLine($"IT'S EVEN - VOCÊ GANHOU! ${amountWaged * 2}.00!");
+                Console.WriteLine($"É EVEN - VOCÊ GANHOU! ${amountWaged * 2}.00!");
                 currentBankAmount = (amountWaged * 2) + currentBankAmount;
                 Console.WriteLine($"Você tem ${currentBankAmount}.00");
                 Game.AddMoney(ref currentBankAmount);
@@ -1015,7 +989,7 @@ namespace MasterClasses
             }
             else if (even_nums.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
             {
-                Console.WriteLine("Sorry, it's Odd, you lose");
+                Console.WriteLine("Desculpe, é Odd, voce perdeu");
                 Account.Bank();
 
             }
@@ -1038,7 +1012,7 @@ namespace MasterClasses
 
             if (odd_nums.Any(i => i == ballNumber))
             {
-                Console.WriteLine($"IT'S ODD - VOCÊ GANHOU! ${amountWaged * 2}.00!");
+                Console.WriteLine($"É ODD - VOCÊ GANHOU! ${amountWaged * 2}.00!");
                 currentBankAmount = (amountWaged * 2) + currentBankAmount;
                 Console.WriteLine($"Você tem ${currentBankAmount}.00");
                 Game.AddMoney(ref currentBankAmount);
@@ -1046,7 +1020,7 @@ namespace MasterClasses
             }
             else if (odd_nums.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
             {
-                Console.WriteLine("Sorry, it's Even, you lose");
+                Console.WriteLine("Desculpe, é Even, voce perdeu");
                 Account.Bank();
 
             }
@@ -1069,7 +1043,7 @@ namespace MasterClasses
 
             if (low_nums.Any(i => i == ballNumber))
             {
-                Console.WriteLine($"IT'S LOW - VOCÊ GANHOU! ${amountWaged * 2}.00!");
+                Console.WriteLine($"É LOW - VOCÊ GANHOU! ${amountWaged * 2}.00!");
                 currentBankAmount = (amountWaged * 2) + currentBankAmount;
                 Console.WriteLine($"Você tem ${currentBankAmount}.00");
                 Game.AddMoney(ref currentBankAmount);
@@ -1077,7 +1051,7 @@ namespace MasterClasses
             }
             else if (low_nums.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
             {
-                Console.WriteLine("Sorry, it's High, you lose");
+                Console.WriteLine("Desculpe, é High, voce perdeu");
                 Account.Bank();
 
             }
@@ -1100,7 +1074,7 @@ namespace MasterClasses
 
             if (high_nums.Any(i => i == ballNumber))
             {
-                Console.WriteLine($"IT'S HIGH - VOCÊ GANHOU! ${amountWaged * 2}.00!");
+                Console.WriteLine($"É HIGH - VOCÊ GANHOU! ${amountWaged * 2}.00!");
                 currentBankAmount = (amountWaged * 2) + currentBankAmount;
                 Console.WriteLine($"Você tem ${currentBankAmount}.00");
                 Game.AddMoney(ref currentBankAmount);
@@ -1108,7 +1082,7 @@ namespace MasterClasses
             }
             else if (high_nums.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
             {
-                Console.WriteLine("Sorry, it's Low, you lose");
+                Console.WriteLine("Desculpe, é Low, voce perdeu");
                 Account.Bank();
 
             }
@@ -1121,10 +1095,10 @@ namespace MasterClasses
         }
         public static void Dozens()
         {
-            Console.WriteLine("Choose a Dozen:");
-            Console.WriteLine("[1] 1 thru 12");
-            Console.WriteLine("[2] 13 thru 24");
-            Console.WriteLine("[3] 25 thru 36");
+            Console.WriteLine("Escolha uma Dúzia:");
+            Console.WriteLine("[1] 1 até 12");
+            Console.WriteLine("[2] 13 até 24");
+            Console.WriteLine("[3] 25 até 36");
             string pickADozen;
             pickADozen = Console.ReadLine();
             if (pickADozen == "1" || pickADozen == "2" || pickADozen == "3")
@@ -1135,13 +1109,13 @@ namespace MasterClasses
                     //1-12 Code
                     int[] lowDozen_nums = { 1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
 
-                    Console.WriteLine("Você selecionou 1 thru 12");
+                    Console.WriteLine("Você selecionou 1 até 12");
                     BallLandsOnThisNUmber();
                     BallDrops();
 
                     if (lowDozen_nums.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S 1 thru 12 - VOCÊ GANHOU! ${amountWaged * 2}.00!");
+                        Console.WriteLine($"É 1 até 12 - VOCÊ GANHOU! ${amountWaged * 2}.00!");
                         currentBankAmount = (amountWaged * 2) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -1149,7 +1123,7 @@ namespace MasterClasses
                     }
                     else if (lowDozen_nums.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine("Sorry, it's not 1 thru 12, you lose");
+                        Console.WriteLine("Desculpe, não são 1 até 12, voce perdeu");
                         Account.Bank();
                     }
                     else
@@ -1163,13 +1137,13 @@ namespace MasterClasses
                     //13-24 Code
                     int[] midDozen_nums = { 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24 };
 
-                    Console.WriteLine("Você selecionou 13 thru 24");
+                    Console.WriteLine("Você selecionou 13 até 24");
                     BallLandsOnThisNUmber();
                     BallDrops();
 
                     if (midDozen_nums.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S 13 thru 24 - VOCÊ GANHOU! ${amountWaged * 2}.00!");
+                        Console.WriteLine($"É 13 até 24 - VOCÊ GANHOU! ${amountWaged * 2}.00!");
                         currentBankAmount = (amountWaged * 2) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -1177,7 +1151,7 @@ namespace MasterClasses
                     }
                     else if (midDozen_nums.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine("Sorry, it's not 13 thru 24, you lose");
+                        Console.WriteLine("Desculpe, não são 13 até 24, você perdeu");
                         Account.Bank();
 
                     }
@@ -1193,13 +1167,13 @@ namespace MasterClasses
                     //25-36 Code
                     int[] highDozen_nums = { 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38 };
 
-                    Console.WriteLine("Você selecionou 25 thru 36");
+                    Console.WriteLine("Você selecionou 25 até 36");
                     BallLandsOnThisNUmber();
                     BallDrops();
 
                     if (highDozen_nums.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S 25 thru 36 - VOCÊ GANHOU! ${amountWaged * 2}.00!");
+                        Console.WriteLine($"É 25 até 36 - VOCÊ GANHOU! ${amountWaged * 2}.00!");
                         currentBankAmount = (amountWaged * 2) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -1207,7 +1181,7 @@ namespace MasterClasses
                     }
                     else if (highDozen_nums.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine("Sorry, it's not 25 thru 36, you lose");
+                        Console.WriteLine("Desculpe, não são 25 até 36, voce perdeu");
                         Account.Bank();
                     }
                     else
@@ -1226,17 +1200,17 @@ namespace MasterClasses
                 else
                 {
                     Console.WriteLine($"Você selecionou {pickADozen}");
-                    Console.WriteLine("That's not a choice, try again");
+                    Console.WriteLine("Isso não é uma escolha, tente novamente");
                     Dozens();
                 }
             }
         }
         public static void Columns()
         {
-            Console.WriteLine("Choose a Column:");
-            Console.WriteLine("[1] Column 1");
-            Console.WriteLine("[2] Column 2");
-            Console.WriteLine("[3] Column 3");
+            Console.WriteLine("Escolha uma coluna:");
+            Console.WriteLine("[1] Coluna 1");
+            Console.WriteLine("[2] Coluna 2");
+            Console.WriteLine("[3] Coluna 3");
             string pickColumnn;
             pickColumnn = Console.ReadLine();
             if (pickColumnn == "1" || pickColumnn == "2" || pickColumnn == "3")
@@ -1246,16 +1220,16 @@ namespace MasterClasses
                 Console.WriteLine($"Você selecionou {pickColumnn}");
                 if (pickColumnn == "1")
                 {
-                    //Column 1 Code
+                    //Coluna 1 Code
                     int[] column1_nums = { 1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34 };
 
-                    Console.WriteLine("Você selecionou Column 1");
+                    Console.WriteLine("Você selecionou Coluna 1");
                     BallLandsOnThisNUmber();
                     BallDrops();
 
                     if (column1_nums.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S Column 1 - VOCÊ GANHOU! ${amountWaged * 3}.00!");
+                        Console.WriteLine($"É Coluna 1 - VOCÊ GANHOU! ${amountWaged * 3}.00!");
                         currentBankAmount = (amountWaged * 3) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -1263,7 +1237,7 @@ namespace MasterClasses
                     }
                     else if (column1_nums.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine("Sorry, it's not Column 1, you lose");
+                        Console.WriteLine("Desculpe, não são Coluna 1, voce perdeu");
                         Account.Bank();
 
                     }
@@ -1277,16 +1251,16 @@ namespace MasterClasses
                 }
                 else if (pickColumnn == "2")
                 {
-                    //Column 2 Code
+                    //Coluna 2 Code
                     int[] column2_nums = { 2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35 };
 
-                    Console.WriteLine("Você selecionou Column 2");
+                    Console.WriteLine("Você selecionou Coluna 2");
                     BallLandsOnThisNUmber();
                     BallDrops();
 
                     if (column2_nums.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S Column 2- VOCÊ GANHOU! ${amountWaged * 3}.00!");
+                        Console.WriteLine($"É Coluna 2- VOCÊ GANHOU! ${amountWaged * 3}.00!");
                         currentBankAmount = (amountWaged * 3) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -1294,7 +1268,7 @@ namespace MasterClasses
                     }
                     else if (column2_nums.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine("Sorry, it's not Column 2, you lose");
+                        Console.WriteLine("Desculpe, não são Coluna 2, voce perdeu");
                         Account.Bank();
 
                     }
@@ -1307,16 +1281,16 @@ namespace MasterClasses
                 }
                 else
                 {
-                    //Column 3 Code
+                    //Coluna 3 Code
                     int[] column3_nums = { 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36 };
 
-                    Console.WriteLine("Column 3");
+                    Console.WriteLine("Coluna 3");
                     BallLandsOnThisNUmber();
                     BallDrops();
 
                     if (column3_nums.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S Column 3 - VOCÊ GANHOU! ${amountWaged * 3}.00!");
+                        Console.WriteLine($"É Coluna 3 - VOCÊ GANHOU! ${amountWaged * 3}.00!");
                         currentBankAmount = (amountWaged * 3) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -1324,7 +1298,7 @@ namespace MasterClasses
                     }
                     else if (column3_nums.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine("Sorry, it's not Column 3, you lose");
+                        Console.WriteLine("Desculpe, não são Coluna 3, voce perdeu");
                         Account.Bank();
 
                     }
@@ -1344,26 +1318,26 @@ namespace MasterClasses
                 else
                 {
                     Console.WriteLine($"Você selecionou {pickColumnn}");
-                    Console.WriteLine("That's not a choice, try again");
+                    Console.WriteLine("Isso não é uma escolha, tente novamente");
                     Columns();
                 }
             }
         }
         public static void Street()
         {
-            Console.WriteLine("Choose a Street:");
-            Console.WriteLine("[ 1] Numbers 1 thru 3");
-            Console.WriteLine("[ 2] Numbers 4 thru 6");
-            Console.WriteLine("[ 3] Numbers 7 thru 9");
-            Console.WriteLine("[ 4] Numbers 10 thru 12");
-            Console.WriteLine("[ 5] Numbers 13 thru 15");
-            Console.WriteLine("[ 6] Numbers 16 thru 18");
-            Console.WriteLine("[ 7] Numbers 19 thru 21");
-            Console.WriteLine("[ 8] Numbers 22 thru 24");
-            Console.WriteLine("[ 9] Numbers 25 thru 27");
-            Console.WriteLine("[10] Numbers 28 thru 30");
-            Console.WriteLine("[11] Numbers 31 thru 33");
-            Console.WriteLine("[12] Numbers 34 thru 36");
+            Console.WriteLine("Escolha uma fileira:");
+            Console.WriteLine("[ 1] Número 1 até 3");
+            Console.WriteLine("[ 2] Número 4 até 6");
+            Console.WriteLine("[ 3] Número 7 até 9");
+            Console.WriteLine("[ 4] Número 10 até 12");
+            Console.WriteLine("[ 5] Número 13 até 15");
+            Console.WriteLine("[ 6] Número 16 até 18");
+            Console.WriteLine("[ 7] Número 19 até 21");
+            Console.WriteLine("[ 8] Número 22 até 24");
+            Console.WriteLine("[ 9] Número 25 até 27");
+            Console.WriteLine("[10] Número 28 até 30");
+            Console.WriteLine("[11] Número 31 até 33");
+            Console.WriteLine("[12] Número 34 até 36");
 
             string pickStreet;
             pickStreet = Console.ReadLine();
@@ -1375,13 +1349,13 @@ namespace MasterClasses
                     //Street 1 Code
                     int[] street1_nums = { 1, 2, 3 };
 
-                    Console.WriteLine("Você selecionou Street 1");
+                    Console.WriteLine("Você selecionou Fileira 1");
                     BallLandsOnThisNUmber();
                     BallDrops();
 
                     if (street1_nums.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S Street 1 - VOCÊ GANHOU! ${amountWaged * 11}.00!");
+                        Console.WriteLine($"É Fileira 1 - VOCÊ GANHOU! ${amountWaged * 11}.00!");
                         currentBankAmount = (amountWaged * 11) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -1389,7 +1363,7 @@ namespace MasterClasses
                     }
                     else if (street1_nums.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine("Sorry, it's not Street 1, you lose");
+                        Console.WriteLine("Desculpe, não são Fileira 1, voce perdeu");
                         Account.Bank();
                     }
                     else
@@ -1403,13 +1377,13 @@ namespace MasterClasses
                     //Street 2 Code
                     int[] street2_nums = { 4, 5, 6 };
 
-                    Console.WriteLine("Você selecionou Street 2");
+                    Console.WriteLine("Você selecionou Fileira 2");
                     BallLandsOnThisNUmber();
                     BallDrops();
 
                     if (street2_nums.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S Street 2- VOCÊ GANHOU! ${amountWaged * 11}.00!");
+                        Console.WriteLine($"É Fileira 2- VOCÊ GANHOU! ${amountWaged * 11}.00!");
                         currentBankAmount = (amountWaged * 11) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -1417,7 +1391,7 @@ namespace MasterClasses
                     }
                     else if (street2_nums.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine("Sorry, it's not Street 2, you lose");
+                        Console.WriteLine("Desculpe, não são Fileira 2, voce perdeu");
                         Account.Bank();
                     }
                     else
@@ -1432,13 +1406,13 @@ namespace MasterClasses
                     //Street 3 Code
                     int[] street3_nums = { 7, 8, 9 };
 
-                    Console.WriteLine("Você selecionou Street 3");
+                    Console.WriteLine("Você selecionou Fileira 3");
                     BallLandsOnThisNUmber();
                     BallDrops();
 
                     if (street3_nums.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S Street 3 - VOCÊ GANHOU! ${amountWaged * 11}.00!");
+                        Console.WriteLine($"É Fileira 3 - VOCÊ GANHOU! ${amountWaged * 11}.00!");
                         currentBankAmount = (amountWaged * 11) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -1446,7 +1420,7 @@ namespace MasterClasses
                     }
                     else if (street3_nums.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine("Sorry, it's not Street 3, you lose");
+                        Console.WriteLine("Desculpe, não são Fileira 3, voce perdeu");
                         Account.Bank();
 
                     }
@@ -1462,13 +1436,13 @@ namespace MasterClasses
                     //Street 4 Code
                     int[] street4_nums = { 10, 11, 12 };
 
-                    Console.WriteLine("Você selecionou Street 4");
+                    Console.WriteLine("Você selecionou Fileira 4");
                     BallLandsOnThisNUmber();
                     BallDrops();
 
                     if (street4_nums.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S Street 4 - VOCÊ GANHOU! ${amountWaged * 11}.00!");
+                        Console.WriteLine($"É Fileira 4 - VOCÊ GANHOU! ${amountWaged * 11}.00!");
                         currentBankAmount = (amountWaged * 11) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -1476,7 +1450,7 @@ namespace MasterClasses
                     }
                     else if (street4_nums.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine("Sorry, it's not Street 4, you lose");
+                        Console.WriteLine("Desculpe, não são Fileira 4, voce perdeu");
                         Account.Bank();
 
                     }
@@ -1491,13 +1465,13 @@ namespace MasterClasses
                     //Street 5 Code
                     int[] street5_nums = { 13, 14, 15 };
 
-                    Console.WriteLine("Você selecionou Street 5");
+                    Console.WriteLine("Você selecionou Fileira 5");
                     BallLandsOnThisNUmber();
                     BallDrops();
 
                     if (street5_nums.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S Street 5 - VOCÊ GANHOU! ${amountWaged * 11}.00!");
+                        Console.WriteLine($"É Fileira 5 - VOCÊ GANHOU! ${amountWaged * 11}.00!");
                         currentBankAmount = (amountWaged * 11) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -1505,7 +1479,7 @@ namespace MasterClasses
                     }
                     else if (street5_nums.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine("Sorry, it's not Street 5, you lose");
+                        Console.WriteLine("Desculpe, não são Fileira 5, voce perdeu");
                         Account.Bank();
 
                     }
@@ -1520,13 +1494,13 @@ namespace MasterClasses
                     //Street 6 Code
                     int[] street6_nums = { 16, 17, 18 };
 
-                    Console.WriteLine("Você selecionou Street 6");
+                    Console.WriteLine("Você selecionou Fileira 6");
                     BallLandsOnThisNUmber();
                     BallDrops();
 
                     if (street6_nums.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S Street 6 - VOCÊ GANHOU! ${amountWaged * 11}.00!");
+                        Console.WriteLine($"É Fileira 6 - VOCÊ GANHOU! ${amountWaged * 11}.00!");
                         currentBankAmount = (amountWaged * 11) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -1534,7 +1508,7 @@ namespace MasterClasses
                     }
                     else if (street6_nums.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine("Sorry, it's not Street 6, you lose");
+                        Console.WriteLine("Desculpe, não são Fileira 6, voce perdeu");
                         Account.Bank();
 
                     }
@@ -1549,13 +1523,13 @@ namespace MasterClasses
                     //Street 7 Code
                     int[] street7_nums = { 19, 20, 21 };
 
-                    Console.WriteLine("Você selecionou Street 7");
+                    Console.WriteLine("Você selecionou Fileira 7");
                     BallLandsOnThisNUmber();
                     BallDrops();
 
                     if (street7_nums.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S Street 7 - VOCÊ GANHOU! ${amountWaged * 11}.00!");
+                        Console.WriteLine($"É Fileira 7 - VOCÊ GANHOU! ${amountWaged * 11}.00!");
                         currentBankAmount = (amountWaged * 11) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -1563,7 +1537,7 @@ namespace MasterClasses
                     }
                     else if (street7_nums.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine("Sorry, it's not Street 7, you lose");
+                        Console.WriteLine("Desculpe, não são Fileira 7, voce perdeu");
                         Account.Bank();
 
                     }
@@ -1578,13 +1552,13 @@ namespace MasterClasses
                     //Street 8 Code
                     int[] street8_nums = { 22, 23, 24 };
 
-                    Console.WriteLine("Você selecionou Street 8");
+                    Console.WriteLine("Você selecionou Fileira 8");
                     BallLandsOnThisNUmber();
                     BallDrops();
 
                     if (street8_nums.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S Street 8 - VOCÊ GANHOU! ${amountWaged * 11}.00!");
+                        Console.WriteLine($"É Fileira 8 - VOCÊ GANHOU! ${amountWaged * 11}.00!");
                         currentBankAmount = (amountWaged * 11) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -1592,7 +1566,7 @@ namespace MasterClasses
                     }
                     else if (street8_nums.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine("Sorry, it's not Street 8, you lose");
+                        Console.WriteLine("Desculpe, não são Fileira 8, voce perdeu");
                         Account.Bank();
 
                     }
@@ -1607,13 +1581,13 @@ namespace MasterClasses
                     //Street 9 Code
                     int[] street9_nums = { 25, 26, 27 };
 
-                    Console.WriteLine("Você selecionou Street 9");
+                    Console.WriteLine("Você selecionou Fileira 9");
                     BallLandsOnThisNUmber();
                     BallDrops();
 
                     if (street9_nums.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S Street 9 - VOCÊ GANHOU! ${amountWaged * 11}.00!");
+                        Console.WriteLine($"É Fileira 9 - VOCÊ GANHOU! ${amountWaged * 11}.00!");
                         currentBankAmount = (amountWaged * 11) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -1621,7 +1595,7 @@ namespace MasterClasses
                     }
                     else if (street9_nums.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine("Sorry, it's not Street 9, you lose");
+                        Console.WriteLine("Desculpe, não são Fileira 9, voce perdeu");
                         Account.Bank();
 
                     }
@@ -1636,13 +1610,13 @@ namespace MasterClasses
                     //Street 10 Code
                     int[] street10_nums = { 28, 29, 30 };
 
-                    Console.WriteLine("Você selecionou Street 10");
+                    Console.WriteLine("Você selecionou Fileira 10");
                     BallLandsOnThisNUmber();
                     BallDrops();
 
                     if (street10_nums.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S Street 10 - VOCÊ GANHOU! ${amountWaged * 11}.00!");
+                        Console.WriteLine($"É Fileira 10 - VOCÊ GANHOU! ${amountWaged * 11}.00!");
                         currentBankAmount = (amountWaged * 11) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -1650,7 +1624,7 @@ namespace MasterClasses
                     }
                     else if (street10_nums.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine("Sorry, it's not Street 10, you lose");
+                        Console.WriteLine("Desculpe, não são Fileira 10, voce perdeu");
                         Account.Bank();
 
                     }
@@ -1665,13 +1639,13 @@ namespace MasterClasses
                     //Street 11 Code
                     int[] street11_nums = { 31, 32, 33 };
 
-                    Console.WriteLine("Você selecionou Street 11");
+                    Console.WriteLine("Você selecionou Fileira 11");
                     BallLandsOnThisNUmber();
                     BallDrops();
 
                     if (street11_nums.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S Street 11 - VOCÊ GANHOU! ${amountWaged * 11}.00!");
+                        Console.WriteLine($"É Fileira 11 - VOCÊ GANHOU! ${amountWaged * 11}.00!");
                         currentBankAmount = (amountWaged * 11) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -1679,7 +1653,7 @@ namespace MasterClasses
                     }
                     else if (street11_nums.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine("Sorry, it's not Street 11, you lose");
+                        Console.WriteLine("Desculpe, não são Fileira 11, voce perdeu");
                         Account.Bank();
 
                     }
@@ -1694,13 +1668,13 @@ namespace MasterClasses
                     //Street 12 Code
                     int[] street12_nums = { 34, 35, 36 };
 
-                    Console.WriteLine("Você selecionou Street 12");
+                    Console.WriteLine("Você selecionou Fileira 12");
                     BallLandsOnThisNUmber();
                     BallDrops();
 
                     if (street12_nums.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S Street 12 - VOCÊ GANHOU! ${amountWaged * 11}.00!");
+                        Console.WriteLine($"É Fileira 12 - VOCÊ GANHOU! ${amountWaged * 11}.00!");
                         currentBankAmount = (amountWaged * 11) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -1708,7 +1682,7 @@ namespace MasterClasses
                     }
                     else if (street12_nums.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine("Sorry, it's not Street 12, you lose");
+                        Console.WriteLine("Desculpe, não são Fileira 12, voce perdeu");
                         Account.Bank();
 
                     }
@@ -1728,25 +1702,25 @@ namespace MasterClasses
                 else
                 {
                     Console.WriteLine($"Você selecionou {pickStreet}");
-                    Console.WriteLine("That's not a choice, try again");
+                    Console.WriteLine("Isso não é uma escolha, tente novamente");
                     Street();
                 }
             }
         }
         public static void SixLine()
         {
-            Console.WriteLine("Choose a Six Line:");
-            Console.WriteLine("[ 1] Numbers 1 thru 6");
-            Console.WriteLine("[ 2] Numbers 4 thru 9");
-            Console.WriteLine("[ 3] Numbers 7 thru 12");
-            Console.WriteLine("[ 4] Numbers 10 thru 15");
-            Console.WriteLine("[ 5] Numbers 13 thru 18");
-            Console.WriteLine("[ 6] Numbers 16 thru 21");
-            Console.WriteLine("[ 7] Numbers 19 thru 24");
-            Console.WriteLine("[ 8] Numbers 22 thru 27");
-            Console.WriteLine("[ 9] Numbers 25 thru 30");
-            Console.WriteLine("[10] Numbers 28 thru 33");
-            Console.WriteLine("[11] Numbers 31 thru 36");
+            Console.WriteLine("Escolha uma linha de seis números:");
+            Console.WriteLine("[ 1] Número 1 até 6");
+            Console.WriteLine("[ 2] Número 4 até 9");
+            Console.WriteLine("[ 3] Número 7 até 12");
+            Console.WriteLine("[ 4] Número 10 até 15");
+            Console.WriteLine("[ 5] Número 13 até 18");
+            Console.WriteLine("[ 6] Número 16 até 21");
+            Console.WriteLine("[ 7] Número 19 até 24");
+            Console.WriteLine("[ 8] Número 22 até 27");
+            Console.WriteLine("[ 9] Número 25 até 30");
+            Console.WriteLine("[10] Número 28 até 33");
+            Console.WriteLine("[11] Número 31 até 36");
 
             string pickSixLine;
             pickSixLine = Console.ReadLine();
@@ -1759,13 +1733,13 @@ namespace MasterClasses
                     //Six Line 1 Code
                     int[] sixLine1_nums = { 1, 2, 3, 4, 5, 6 };
 
-                    Console.WriteLine("Você selecionou Six Line 1");
+                    Console.WriteLine("Você selecionou linha de seis 1");
                     BallLandsOnThisNUmber();
                     BallDrops();
 
                     if (sixLine1_nums.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S Six Line 1 - VOCÊ GANHOU! ${amountWaged * 5}.00!");
+                        Console.WriteLine($"É linha de seis 1 - VOCÊ GANHOU! ${amountWaged * 5}.00!");
                         currentBankAmount = (amountWaged * 5) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -1773,7 +1747,7 @@ namespace MasterClasses
                     }
                     else if (sixLine1_nums.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine("Sorry, it's not Six Line 1, you lose");
+                        Console.WriteLine("Desculpe, não são linha de seis 1, voce perdeu");
                         Account.Bank();
 
                     }
@@ -1791,13 +1765,13 @@ namespace MasterClasses
                     //Six Line 2 Code
                     int[] sixLine2_nums = { 4, 5, 6, 7, 8, 9 };
 
-                    Console.WriteLine("Você selecionou Six Line 2");
+                    Console.WriteLine("Você selecionou linha de seis 2");
                     BallLandsOnThisNUmber();
                     BallDrops();
 
                     if (sixLine2_nums.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S Six Line 2- VOCÊ GANHOU! ${amountWaged * 5}.00!");
+                        Console.WriteLine($"É linha de seis 2- VOCÊ GANHOU! ${amountWaged * 5}.00!");
                         currentBankAmount = (amountWaged * 5) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -1805,7 +1779,7 @@ namespace MasterClasses
                     }
                     else if (sixLine2_nums.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine("Sorry, it's not Six Line 2, you lose");
+                        Console.WriteLine("Desculpe, não são linha de seis 2, voce perdeu");
                         Account.Bank();
 
                     }
@@ -1822,13 +1796,13 @@ namespace MasterClasses
                     //Six Line 3 Code
                     int[] sixLine3_nums = { 7, 8, 9, 10, 11, 12 };
 
-                    Console.WriteLine("Você selecionou Six Line 3");
+                    Console.WriteLine("Você selecionou linha de seis 3");
                     BallLandsOnThisNUmber();
                     BallDrops();
 
                     if (sixLine3_nums.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S Six Line 3 - VOCÊ GANHOU! ${amountWaged * 5}.00!");
+                        Console.WriteLine($"É linha de seis 3 - VOCÊ GANHOU! ${amountWaged * 5}.00!");
                         currentBankAmount = (amountWaged * 5) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -1836,7 +1810,7 @@ namespace MasterClasses
                     }
                     else if (sixLine3_nums.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine("Sorry, it's not Six Line 3, you lose");
+                        Console.WriteLine("Desculpe, não são linha de seis 3, voce perdeu");
                         Account.Bank();
 
                     }
@@ -1852,13 +1826,13 @@ namespace MasterClasses
                     //Six Line 4 Code
                     int[] sixLine4_nums = { 10, 11, 12, 13, 14, 15 };
 
-                    Console.WriteLine("Você selecionou Six Line 4");
+                    Console.WriteLine("Você selecionou linha de seis 4");
                     BallLandsOnThisNUmber();
                     BallDrops();
 
                     if (sixLine4_nums.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S Six Line 4 - VOCÊ GANHOU! ${amountWaged * 5}.00!");
+                        Console.WriteLine($"É linha de seis 4 - VOCÊ GANHOU! ${amountWaged * 5}.00!");
                         currentBankAmount = (amountWaged * 5) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -1866,7 +1840,7 @@ namespace MasterClasses
                     }
                     else if (sixLine4_nums.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine("Sorry, it's not Six Line 4, you lose");
+                        Console.WriteLine("Desculpe, não são linha de seis 4, voce perdeu");
                         Account.Bank();
 
                     }
@@ -1881,13 +1855,13 @@ namespace MasterClasses
                     //Six Line 5 Code
                     int[] sixLine5_nums = { 13, 14, 15, 16, 17, 18 };
 
-                    Console.WriteLine("Você selecionou Six Line 5");
+                    Console.WriteLine("Você selecionou linha de seis 5");
                     BallLandsOnThisNUmber();
                     BallDrops();
 
                     if (sixLine5_nums.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S Six Line 5 - VOCÊ GANHOU! ${amountWaged * 5}.00!");
+                        Console.WriteLine($"É linha de seis 5 - VOCÊ GANHOU! ${amountWaged * 5}.00!");
                         currentBankAmount = (amountWaged * 5) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -1895,7 +1869,7 @@ namespace MasterClasses
                     }
                     else if (sixLine5_nums.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine("Sorry, it's not Six Line 5, you lose");
+                        Console.WriteLine("Desculpe, não são linha de seis 5, voce perdeu");
                         Account.Bank();
 
                     }
@@ -1910,13 +1884,13 @@ namespace MasterClasses
                     //Six Line 6 Code
                     int[] sixLine6_nums = { 16, 17, 18, 19, 20, 21 };
 
-                    Console.WriteLine("Você selecionou Six Line 6");
+                    Console.WriteLine("Você selecionou linha de seis 6");
                     BallLandsOnThisNUmber();
                     BallDrops();
 
                     if (sixLine6_nums.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S Six Line 6 - VOCÊ GANHOU! ${amountWaged * 5}.00!");
+                        Console.WriteLine($"É linha de seis 6 - VOCÊ GANHOU! ${amountWaged * 5}.00!");
                         currentBankAmount = (amountWaged * 5) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -1924,7 +1898,7 @@ namespace MasterClasses
                     }
                     else if (sixLine6_nums.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine("Sorry, it's not Six Line 6, you lose");
+                        Console.WriteLine("Desculpe, não são linha de seis 6, voce perdeu");
                         Account.Bank();
 
                     }
@@ -1939,13 +1913,13 @@ namespace MasterClasses
                     //Six Line 7 Code
                     int[] sixLine7_nums = { 19, 20, 21, 22, 23, 24 };
 
-                    Console.WriteLine("Você selecionou Six Line 7");
+                    Console.WriteLine("Você selecionou linha de seis 7");
                     BallLandsOnThisNUmber();
                     BallDrops();
 
                     if (sixLine7_nums.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S Six Line 7 - VOCÊ GANHOU! ${amountWaged * 5}.00!");
+                        Console.WriteLine($"É linha de seis 7 - VOCÊ GANHOU! ${amountWaged * 5}.00!");
                         currentBankAmount = (amountWaged * 5) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -1953,7 +1927,7 @@ namespace MasterClasses
                     }
                     else if (sixLine7_nums.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine("Sorry, it's not Six Line 7, you lose");
+                        Console.WriteLine("Desculpe, não são linha de seis 7, voce perdeu");
                         Account.Bank();
 
                     }
@@ -1968,13 +1942,13 @@ namespace MasterClasses
                     //Six Line 8 Code
                     int[] sixLine8_nums = { 22, 23, 24, 25, 26, 27 };
 
-                    Console.WriteLine("Você selecionou Six Line 8");
+                    Console.WriteLine("Você selecionou linha de seis 8");
                     BallLandsOnThisNUmber();
                     BallDrops();
 
                     if (sixLine8_nums.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S Six Line 8 - VOCÊ GANHOU! ${amountWaged * 5}.00!");
+                        Console.WriteLine($"É linha de seis 8 - VOCÊ GANHOU! ${amountWaged * 5}.00!");
                         currentBankAmount = (amountWaged * 5) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -1982,7 +1956,7 @@ namespace MasterClasses
                     }
                     else if (sixLine8_nums.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine("Sorry, it's not Six Line 8, you lose");
+                        Console.WriteLine("Desculpe, não são linha de seis 8, voce perdeu");
                         Account.Bank();
 
                     }
@@ -1997,13 +1971,13 @@ namespace MasterClasses
                     //Six Line 9 Code
                     int[] sixLine9_nums = { 25, 26, 27, 28, 29, 30 };
 
-                    Console.WriteLine("Você selecionou Six Line 9");
+                    Console.WriteLine("Você selecionou linha de seis 9");
                     BallLandsOnThisNUmber();
                     BallDrops();
 
                     if (sixLine9_nums.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S Six Line 9 - VOCÊ GANHOU! ${amountWaged * 5}.00!");
+                        Console.WriteLine($"É linha de seis 9 - VOCÊ GANHOU! ${amountWaged * 5}.00!");
                         currentBankAmount = (amountWaged * 5) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -2011,7 +1985,7 @@ namespace MasterClasses
                     }
                     else if (sixLine9_nums.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine("Sorry, it's not Six Line 9, you lose");
+                        Console.WriteLine("Desculpe, não são linha de seis 9, voce perdeu");
                         Account.Bank();
 
                     }
@@ -2026,13 +2000,13 @@ namespace MasterClasses
                     //Six Line 10 Code
                     int[] sixLine10_nums = { 28, 29, 30, 31, 32, 33 };
 
-                    Console.WriteLine("Você selecionou Six Line 10");
+                    Console.WriteLine("Você selecionou linha de seis 10");
                     BallLandsOnThisNUmber();
                     BallDrops();
 
                     if (sixLine10_nums.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S Street 10 - VOCÊ GANHOU! ${amountWaged * 5}.00!");
+                        Console.WriteLine($"É Fileira 10 - VOCÊ GANHOU! ${amountWaged * 5}.00!");
                         currentBankAmount = (amountWaged * 5) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -2040,7 +2014,7 @@ namespace MasterClasses
                     }
                     else if (sixLine10_nums.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine("Sorry, it's not Six Line 10, you lose");
+                        Console.WriteLine("Desculpe, não são linha de seis 10, voce perdeu");
                         Account.Bank();
 
                     }
@@ -2055,13 +2029,13 @@ namespace MasterClasses
                     //Six Line 11 Code
                     int[] sixLine11_nums = { 31, 32, 33, 34, 35, 36 };
 
-                    Console.WriteLine("Você selecionou Six Line 11");
+                    Console.WriteLine("Você selecionou linha de seis 11");
                     BallLandsOnThisNUmber();
                     BallDrops();
 
                     if (sixLine11_nums.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S Six Line 11 - VOCÊ GANHOU! ${amountWaged * 5}.00!");
+                        Console.WriteLine($"É linha de seis 11 - VOCÊ GANHOU! ${amountWaged * 5}.00!");
                         currentBankAmount = (amountWaged * 5) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -2069,7 +2043,7 @@ namespace MasterClasses
                     }
                     else if (sixLine11_nums.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine("Sorry, it's not Six Line 11, you lose");
+                        Console.WriteLine("Desculpe, não são linha de seis 11, voce perdeu");
                         Account.Bank();
 
                     }
@@ -2089,16 +2063,16 @@ namespace MasterClasses
                 else
                 {
                     Console.WriteLine($"Você selecionou {pickSixLine}");
-                    Console.WriteLine("That's not a choice, try again");
+                    Console.WriteLine("Isso não é uma escolha, tente novamente");
                     SixLine();
                 }
             }
         }
         public static void Spilts()
         {
-            Console.WriteLine("Choose a Spilts:");
-            Console.WriteLine("Type two numbers with the lowest number first");
-            Console.WriteLine("example if you want to split numbers 4 and 7 type: \"4 7\"");
+            Console.WriteLine("Escolha uma divisão");
+            Console.WriteLine("Digite dois números com o número mais baixo primeiro");
+            Console.WriteLine("exemplo se você quiser dividir os números 4 e 7 digite: \"4 7\"");
             var input = Console.ReadLine();
             switch (input)
             {
@@ -2111,7 +2085,7 @@ namespace MasterClasses
 
                     if (nums1.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -2138,7 +2112,7 @@ namespace MasterClasses
 
                     if (nums2.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -2165,7 +2139,7 @@ namespace MasterClasses
 
                     if (nums3.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -2192,7 +2166,7 @@ namespace MasterClasses
 
                     if (nums4.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -2219,7 +2193,7 @@ namespace MasterClasses
 
                     if (nums5.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -2246,7 +2220,7 @@ namespace MasterClasses
 
                     if (nums6.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -2273,7 +2247,7 @@ namespace MasterClasses
 
                     if (nums7.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -2300,7 +2274,7 @@ namespace MasterClasses
 
                     if (nums8.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -2327,7 +2301,7 @@ namespace MasterClasses
 
                     if (nums9.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -2354,7 +2328,7 @@ namespace MasterClasses
 
                     if (nums10.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -2381,7 +2355,7 @@ namespace MasterClasses
 
                     if (nums11.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -2408,7 +2382,7 @@ namespace MasterClasses
 
                     if (nums12.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -2435,7 +2409,7 @@ namespace MasterClasses
 
                     if (nums13.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -2462,7 +2436,7 @@ namespace MasterClasses
 
                     if (nums14.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -2489,7 +2463,7 @@ namespace MasterClasses
 
                     if (nums15.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -2516,7 +2490,7 @@ namespace MasterClasses
 
                     if (nums16.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -2543,7 +2517,7 @@ namespace MasterClasses
 
                     if (nums17.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -2570,7 +2544,7 @@ namespace MasterClasses
 
                     if (nums18.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -2597,7 +2571,7 @@ namespace MasterClasses
 
                     if (nums19.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -2624,7 +2598,7 @@ namespace MasterClasses
 
                     if (num20.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -2651,7 +2625,7 @@ namespace MasterClasses
 
                     if (nums21.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -2678,7 +2652,7 @@ namespace MasterClasses
 
                     if (nums22.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -2705,7 +2679,7 @@ namespace MasterClasses
 
                     if (nums23.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -2732,7 +2706,7 @@ namespace MasterClasses
 
                     if (nums24.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -2759,7 +2733,7 @@ namespace MasterClasses
 
                     if (nums25.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -2786,7 +2760,7 @@ namespace MasterClasses
 
                     if (nums26.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -2813,7 +2787,7 @@ namespace MasterClasses
 
                     if (nums27.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -2840,7 +2814,7 @@ namespace MasterClasses
 
                     if (nums28.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -2867,7 +2841,7 @@ namespace MasterClasses
 
                     if (nums29.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -2894,7 +2868,7 @@ namespace MasterClasses
 
                     if (nums30.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -2921,7 +2895,7 @@ namespace MasterClasses
 
                     if (nums31.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -2948,7 +2922,7 @@ namespace MasterClasses
 
                     if (nums32.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -2975,7 +2949,7 @@ namespace MasterClasses
 
                     if (nums33.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -3002,7 +2976,7 @@ namespace MasterClasses
 
                     if (nums34.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -3029,7 +3003,7 @@ namespace MasterClasses
 
                     if (nums35.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -3056,7 +3030,7 @@ namespace MasterClasses
 
                     if (nums36.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -3083,7 +3057,7 @@ namespace MasterClasses
 
                     if (nums37.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -3110,7 +3084,7 @@ namespace MasterClasses
 
                     if (nums38.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -3137,7 +3111,7 @@ namespace MasterClasses
 
                     if (nums39.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -3164,7 +3138,7 @@ namespace MasterClasses
 
                     if (nums40.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -3191,7 +3165,7 @@ namespace MasterClasses
 
                     if (nums41.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -3218,7 +3192,7 @@ namespace MasterClasses
 
                     if (nums42.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -3245,7 +3219,7 @@ namespace MasterClasses
 
                     if (nums43.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -3272,7 +3246,7 @@ namespace MasterClasses
 
                     if (nums44.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -3299,7 +3273,7 @@ namespace MasterClasses
 
                     if (nums45.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -3326,7 +3300,7 @@ namespace MasterClasses
 
                     if (nums46.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -3353,7 +3327,7 @@ namespace MasterClasses
 
                     if (nums47.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -3380,7 +3354,7 @@ namespace MasterClasses
 
                     if (nums48.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -3407,7 +3381,7 @@ namespace MasterClasses
 
                     if (nums49.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -3434,7 +3408,7 @@ namespace MasterClasses
 
                     if (nums50.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -3461,7 +3435,7 @@ namespace MasterClasses
 
                     if (nums51.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -3488,7 +3462,7 @@ namespace MasterClasses
 
                     if (nums52.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -3515,7 +3489,7 @@ namespace MasterClasses
 
                     if (nums53.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -3542,7 +3516,7 @@ namespace MasterClasses
 
                     if (nums54.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -3569,7 +3543,7 @@ namespace MasterClasses
 
                     if (nums55.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -3596,7 +3570,7 @@ namespace MasterClasses
 
                     if (nums56.Any(i => i == ballNumber))
                     {
-                        Console.WriteLine($"IT'S {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
+                        Console.WriteLine($"É {input} - VOCÊ GANHOU! ${amountWaged * 17}.00!");
                         currentBankAmount = (amountWaged * 17) + currentBankAmount;
                         Console.WriteLine($"Você tem ${currentBankAmount}.00");
                         Game.AddMoney(ref currentBankAmount);
@@ -3623,28 +3597,28 @@ namespace MasterClasses
         public static void Corner()
         {
             Console.WriteLine("Choose a Corner:");
-            Console.WriteLine("[ 1] Numbers 1, 2, 4, 5");
-            Console.WriteLine("[ 2] Numbers 2, 3, 5, 6");
-            Console.WriteLine("[ 3] Numbers 4, 5, 7, 8");
-            Console.WriteLine("[ 4] Numbers 5, 6, 8, 9");
-            Console.WriteLine("[ 5] Numbers 7, 8, 10, 11");
-            Console.WriteLine("[ 6] Numbers 8, 9, 11, 12");
-            Console.WriteLine("[ 7] Numbers 10, 11, 13, 14");
-            Console.WriteLine("[ 8] Numbers 11, 12, 14, 15");
-            Console.WriteLine("[ 9] Numbers 13, 14, 16, 17");
-            Console.WriteLine("[10] Numbers 14, 15, 17, 18");
-            Console.WriteLine("[11] Numbers 16, 17, 19, 20");
-            Console.WriteLine("[12] Numbers 17, 18, 20, 21");
-            Console.WriteLine("[13] Numbers 19, 20, 22, 23");
-            Console.WriteLine("[14] Numbers 20, 21, 23, 24");
-            Console.WriteLine("[15] Numbers 22, 23, 25, 26");
-            Console.WriteLine("[16] Numbers 23, 24, 26, 27");
-            Console.WriteLine("[17] Numbers 25, 26, 28, 29");
-            Console.WriteLine("[18] Numbers 26, 27, 29, 30");
-            Console.WriteLine("[19] Numbers 28, 29, 31, 32");
-            Console.WriteLine("[20] Numbers 29, 30, 32, 33");
-            Console.WriteLine("[21] Numbers 31, 32, 34, 35");
-            Console.WriteLine("[22] Numbers 32, 33, 35, 36");
+            Console.WriteLine("[ 1] Número 1, 2, 4, 5");
+            Console.WriteLine("[ 2] Número 2, 3, 5, 6");
+            Console.WriteLine("[ 3] Número 4, 5, 7, 8");
+            Console.WriteLine("[ 4] Número 5, 6, 8, 9");
+            Console.WriteLine("[ 5] Número 7, 8, 10, 11");
+            Console.WriteLine("[ 6] Número 8, 9, 11, 12");
+            Console.WriteLine("[ 7] Número 10, 11, 13, 14");
+            Console.WriteLine("[ 8] Número 11, 12, 14, 15");
+            Console.WriteLine("[ 9] Número 13, 14, 16, 17");
+            Console.WriteLine("[10] Número 14, 15, 17, 18");
+            Console.WriteLine("[11] Número 16, 17, 19, 20");
+            Console.WriteLine("[12] Número 17, 18, 20, 21");
+            Console.WriteLine("[13] Número 19, 20, 22, 23");
+            Console.WriteLine("[14] Número 20, 21, 23, 24");
+            Console.WriteLine("[15] Número 22, 23, 25, 26");
+            Console.WriteLine("[16] Número 23, 24, 26, 27");
+            Console.WriteLine("[17] Número 25, 26, 28, 29");
+            Console.WriteLine("[18] Número 26, 27, 29, 30");
+            Console.WriteLine("[19] Número 28, 29, 31, 32");
+            Console.WriteLine("[20] Número 29, 30, 32, 33");
+            Console.WriteLine("[21] Número 31, 32, 34, 35");
+            Console.WriteLine("[22] Número 32, 33, 35, 36");
             var input = Console.ReadLine();
 
             switch (input)
@@ -4326,7 +4300,7 @@ namespace MasterClasses
             Console.Clear();
             ASCII_Art.RouletteTableArt();
             Shorts.AddSpace(2);
-            Shorts.Write("Bem-vindo ao Cassino Matheus!\n");
+            Shorts.Write("Bem-vindo ao Cassino!\n");
             Shorts.Write("Vamos jogar roleta\n");
             Shorts.AddSpace(3);
             Account.Bank();
