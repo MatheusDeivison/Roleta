@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\new\\Downloads\\Projetos\\Roulette\\Roulette\\",
+  "WorkspaceRootPath": "C:\\Users\\new\\Documents\\GitHub\\Roleta\\Roulette\\Roulette\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EEFC4D59-0271-4FF3-98B1-3F9BB65BCC4B}|Roulette.csproj|c:\\users\\new\\downloads\\projetos\\roulette\\roulette\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{EEFC4D59-0271-4FF3-98B1-3F9BB65BCC4B}|Roulette.csproj|c:\\users\\new\\documents\\github\\roleta\\roulette\\roulette\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EEFC4D59-0271-4FF3-98B1-3F9BB65BCC4B}|Roulette.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -24,11 +24,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\new\\Downloads\\Projetos\\Roulette\\Roulette\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\new\\Documents\\GitHub\\Roleta\\Roulette\\Roulette\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\new\\Downloads\\Projetos\\Roulette\\Roulette\\Program.cs",
+              "ToolTip": "C:\\Users\\new\\Documents\\GitHub\\Roleta\\Roulette\\Roulette\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAMgDAAAAAAAAAAAawNYDAAAfAAAA",
+              "ViewState": "AQIAACEPAAAAAAAAAAAAAL0IAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-09T18:30:15.629Z",
               "EditorCaption": ""

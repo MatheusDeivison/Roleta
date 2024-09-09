@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\new\\Downloads\\Projetos\\Roulette\\Roulette\\Roulette.csproj",
+      "projectUniqueName": "C:\\Users\\new\\Documents\\GitHub\\Roleta\\Roulette\\Roulette\\Roulette.csproj",
       "projectName": "Roulette",
-      "projectPath": "C:\\Users\\new\\Downloads\\Projetos\\Roulette\\Roulette\\Roulette.csproj",
+      "projectPath": "C:\\Users\\new\\Documents\\GitHub\\Roleta\\Roulette\\Roulette\\Roulette.csproj",
       "packagesPath": "C:\\Users\\new\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\new\\Downloads\\Projetos\\Roulette\\Roulette\\obj\\",
+      "outputPath": "C:\\Users\\new\\Documents\\GitHub\\Roleta\\Roulette\\Roulette\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\new\\AppData\\Roaming\\NuGet\\NuGet.Config",

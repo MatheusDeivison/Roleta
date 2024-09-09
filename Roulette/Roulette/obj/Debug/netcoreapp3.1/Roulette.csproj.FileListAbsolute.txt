@@ -11,3 +11,17 @@ C:\Users\new\Downloads\Projetos\Roulette\Roulette\obj\Debug\netcoreapp3.1\Roulet
 C:\Users\new\Downloads\Projetos\Roulette\Roulette\obj\Debug\netcoreapp3.1\Roulette.dll
 C:\Users\new\Downloads\Projetos\Roulette\Roulette\obj\Debug\netcoreapp3.1\Roulette.pdb
 C:\Users\new\Downloads\Projetos\Roulette\Roulette\obj\Debug\netcoreapp3.1\Roulette.genruntimeconfig.cache
+C:\Users\new\Documents\GitHub\Roleta\Roulette\Roulette\bin\Debug\netcoreapp3.1\Roulette.exe
+C:\Users\new\Documents\GitHub\Roleta\Roulette\Roulette\bin\Debug\netcoreapp3.1\Roulette.deps.json
+C:\Users\new\Documents\GitHub\Roleta\Roulette\Roulette\bin\Debug\netcoreapp3.1\Roulette.runtimeconfig.json
+C:\Users\new\Documents\GitHub\Roleta\Roulette\Roulette\bin\Debug\netcoreapp3.1\Roulette.runtimeconfig.dev.json
+C:\Users\new\Documents\GitHub\Roleta\Roulette\Roulette\bin\Debug\netcoreapp3.1\Roulette.dll
+C:\Users\new\Documents\GitHub\Roleta\Roulette\Roulette\bin\Debug\netcoreapp3.1\Roulette.pdb
+C:\Users\new\Documents\GitHub\Roleta\Roulette\Roulette\obj\Debug\netcoreapp3.1\Roulette.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\new\Documents\GitHub\Roleta\Roulette\Roulette\obj\Debug\netcoreapp3.1\Roulette.AssemblyInfoInputs.cache
+C:\Users\new\Documents\GitHub\Roleta\Roulette\Roulette\obj\Debug\netcoreapp3.1\Roulette.AssemblyInfo.cs
+C:\Users\new\Documents\GitHub\Roleta\Roulette\Roulette\obj\Debug\netcoreapp3.1\Roulette.csproj.CoreCompileInputs.cache
+C:\Users\new\Documents\GitHub\Roleta\Roulette\Roulette\obj\Debug\netcoreapp3.1\Roulette.sourcelink.json
+C:\Users\new\Documents\GitHub\Roleta\Roulette\Roulette\obj\Debug\netcoreapp3.1\Roulette.dll
+C:\Users\new\Documents\GitHub\Roleta\Roulette\Roulette\obj\Debug\netcoreapp3.1\Roulette.pdb
+C:\Users\new\Documents\GitHub\Roleta\Roulette\Roulette\obj\Debug\netcoreapp3.1\Roulette.genruntimeconfig.cache

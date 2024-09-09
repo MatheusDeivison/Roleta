@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\new\\Downloads\\Projetos\\RouletteWheel\\TEST\\TEST.csproj",
+      "projectUniqueName": "C:\\Users\\new\\Documents\\GitHub\\Roleta\\Roulette\\TEST\\TEST.csproj",
       "projectName": "TEST",
-      "projectPath": "C:\\Users\\new\\Downloads\\Projetos\\RouletteWheel\\TEST\\TEST.csproj",
+      "projectPath": "C:\\Users\\new\\Documents\\GitHub\\Roleta\\Roulette\\TEST\\TEST.csproj",
       "packagesPath": "C:\\Users\\new\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\new\\Downloads\\Projetos\\RouletteWheel\\TEST\\obj\\",
+      "outputPath": "C:\\Users\\new\\Documents\\GitHub\\Roleta\\Roulette\\TEST\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\new\\AppData\\Roaming\\NuGet\\NuGet.Config",

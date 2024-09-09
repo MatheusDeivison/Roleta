@@ -2119,7 +2119,7 @@ namespace MasterClasses
                     }
                     else if (nums1.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -2146,7 +2146,7 @@ namespace MasterClasses
                     }
                     else if (nums2.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -2173,7 +2173,7 @@ namespace MasterClasses
                     }
                     else if (nums3.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -2200,7 +2200,7 @@ namespace MasterClasses
                     }
                     else if (nums4.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -2227,7 +2227,7 @@ namespace MasterClasses
                     }
                     else if (nums5.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -2254,7 +2254,7 @@ namespace MasterClasses
                     }
                     else if (nums6.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -2281,7 +2281,7 @@ namespace MasterClasses
                     }
                     else if (nums7.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -2308,7 +2308,7 @@ namespace MasterClasses
                     }
                     else if (nums8.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -2335,7 +2335,7 @@ namespace MasterClasses
                     }
                     else if (nums9.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -2362,7 +2362,7 @@ namespace MasterClasses
                     }
                     else if (nums10.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -2389,7 +2389,7 @@ namespace MasterClasses
                     }
                     else if (nums11.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -2416,7 +2416,7 @@ namespace MasterClasses
                     }
                     else if (nums12.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -2443,7 +2443,7 @@ namespace MasterClasses
                     }
                     else if (nums13.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -2470,7 +2470,7 @@ namespace MasterClasses
                     }
                     else if (nums14.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -2497,7 +2497,7 @@ namespace MasterClasses
                     }
                     else if (nums15.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -2524,7 +2524,7 @@ namespace MasterClasses
                     }
                     else if (nums16.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -2551,7 +2551,7 @@ namespace MasterClasses
                     }
                     else if (nums17.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -2578,7 +2578,7 @@ namespace MasterClasses
                     }
                     else if (nums18.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -2605,7 +2605,7 @@ namespace MasterClasses
                     }
                     else if (nums19.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -2632,7 +2632,7 @@ namespace MasterClasses
                     }
                     else if (num20.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -2659,7 +2659,7 @@ namespace MasterClasses
                     }
                     else if (nums21.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -2686,7 +2686,7 @@ namespace MasterClasses
                     }
                     else if (nums22.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -2713,7 +2713,7 @@ namespace MasterClasses
                     }
                     else if (nums23.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -2740,7 +2740,7 @@ namespace MasterClasses
                     }
                     else if (nums24.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -2767,7 +2767,7 @@ namespace MasterClasses
                     }
                     else if (nums25.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -2794,7 +2794,7 @@ namespace MasterClasses
                     }
                     else if (nums26.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -2821,7 +2821,7 @@ namespace MasterClasses
                     }
                     else if (nums27.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -2848,7 +2848,7 @@ namespace MasterClasses
                     }
                     else if (nums28.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -2875,7 +2875,7 @@ namespace MasterClasses
                     }
                     else if (nums29.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -2902,7 +2902,7 @@ namespace MasterClasses
                     }
                     else if (nums30.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -2929,7 +2929,7 @@ namespace MasterClasses
                     }
                     else if (nums31.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -2956,7 +2956,7 @@ namespace MasterClasses
                     }
                     else if (nums32.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -2983,7 +2983,7 @@ namespace MasterClasses
                     }
                     else if (nums33.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -3010,7 +3010,7 @@ namespace MasterClasses
                     }
                     else if (nums34.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -3037,7 +3037,7 @@ namespace MasterClasses
                     }
                     else if (nums35.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -3064,7 +3064,7 @@ namespace MasterClasses
                     }
                     else if (nums36.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -3091,7 +3091,7 @@ namespace MasterClasses
                     }
                     else if (nums37.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -3118,7 +3118,7 @@ namespace MasterClasses
                     }
                     else if (nums38.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -3145,7 +3145,7 @@ namespace MasterClasses
                     }
                     else if (nums39.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -3172,7 +3172,7 @@ namespace MasterClasses
                     }
                     else if (nums40.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -3199,7 +3199,7 @@ namespace MasterClasses
                     }
                     else if (nums41.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -3226,7 +3226,7 @@ namespace MasterClasses
                     }
                     else if (nums42.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -3253,7 +3253,7 @@ namespace MasterClasses
                     }
                     else if (nums43.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -3280,7 +3280,7 @@ namespace MasterClasses
                     }
                     else if (nums44.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -3307,7 +3307,7 @@ namespace MasterClasses
                     }
                     else if (nums45.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -3334,7 +3334,7 @@ namespace MasterClasses
                     }
                     else if (nums46.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -3361,7 +3361,7 @@ namespace MasterClasses
                     }
                     else if (nums47.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -3388,7 +3388,7 @@ namespace MasterClasses
                     }
                     else if (nums48.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -3415,7 +3415,7 @@ namespace MasterClasses
                     }
                     else if (nums49.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -3442,7 +3442,7 @@ namespace MasterClasses
                     }
                     else if (nums50.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -3469,7 +3469,7 @@ namespace MasterClasses
                     }
                     else if (nums51.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -3496,7 +3496,7 @@ namespace MasterClasses
                     }
                     else if (nums52.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -3523,7 +3523,7 @@ namespace MasterClasses
                     }
                     else if (nums53.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -3550,7 +3550,7 @@ namespace MasterClasses
                     }
                     else if (nums54.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -3577,7 +3577,7 @@ namespace MasterClasses
                     }
                     else if (nums55.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
@@ -3604,7 +3604,7 @@ namespace MasterClasses
                     }
                     else if (nums56.Any(i => i != ballNumber && ballNumber != 37 && ballNumber != 38))
                     {
-                        Console.WriteLine($"Sorry, it's not {input}, you lose");
+                        Console.WriteLine($"Desculpe, não é {input}, você perdeu");
                         Account.Bank();
 
                     }
