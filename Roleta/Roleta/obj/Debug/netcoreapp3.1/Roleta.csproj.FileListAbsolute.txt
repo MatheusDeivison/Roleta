@@ -1,0 +1,14 @@
+C:\Users\new\Documents\GitHub\Roleta\Roleta\Roleta\bin\Debug\netcoreapp3.1\Roleta.exe
+C:\Users\new\Documents\GitHub\Roleta\Roleta\Roleta\bin\Debug\netcoreapp3.1\Roleta.deps.json
+C:\Users\new\Documents\GitHub\Roleta\Roleta\Roleta\bin\Debug\netcoreapp3.1\Roleta.runtimeconfig.json
+C:\Users\new\Documents\GitHub\Roleta\Roleta\Roleta\bin\Debug\netcoreapp3.1\Roleta.runtimeconfig.dev.json
+C:\Users\new\Documents\GitHub\Roleta\Roleta\Roleta\bin\Debug\netcoreapp3.1\Roleta.dll
+C:\Users\new\Documents\GitHub\Roleta\Roleta\Roleta\bin\Debug\netcoreapp3.1\Roleta.pdb
+C:\Users\new\Documents\GitHub\Roleta\Roleta\Roleta\obj\Debug\netcoreapp3.1\Roleta.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\new\Documents\GitHub\Roleta\Roleta\Roleta\obj\Debug\netcoreapp3.1\Roleta.AssemblyInfoInputs.cache
+C:\Users\new\Documents\GitHub\Roleta\Roleta\Roleta\obj\Debug\netcoreapp3.1\Roleta.AssemblyInfo.cs
+C:\Users\new\Documents\GitHub\Roleta\Roleta\Roleta\obj\Debug\netcoreapp3.1\Roleta.csproj.CoreCompileInputs.cache
+C:\Users\new\Documents\GitHub\Roleta\Roleta\Roleta\obj\Debug\netcoreapp3.1\Roleta.sourcelink.json
+C:\Users\new\Documents\GitHub\Roleta\Roleta\Roleta\obj\Debug\netcoreapp3.1\Roleta.dll
+C:\Users\new\Documents\GitHub\Roleta\Roleta\Roleta\obj\Debug\netcoreapp3.1\Roleta.pdb
+C:\Users\new\Documents\GitHub\Roleta\Roleta\Roleta\obj\Debug\netcoreapp3.1\Roleta.genruntimeconfig.cache
